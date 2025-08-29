@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (target.classList.contains('has-tooltip')) {
       event.preventDefault();
 
-      const text = target.getAttribute('title'); // читаем title
+      const text = target.getAttribute('title'); 
       let position = target.getAttribute('data-position') || 'top';
 
 
