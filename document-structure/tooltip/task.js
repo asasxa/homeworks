@@ -11,10 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (target.classList.contains('has-tooltip')) {
       event.preventDefault();
 
-      const text = target.getAttribute('title');
+      const text = target.getAttribute('title'); // читаем title
       let position = target.getAttribute('data-position') || 'top';
 
-      target.removeAttribute('title');
 
       if (tooltip.classList.contains('tooltip_active')) {
         tooltip.classList.remove('tooltip_active');
@@ -30,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
       switch (position) {
         case 'top':
           left = rect.left + (rect.width - tooltipRect.width) / 2;
-          top = rect.top - tooltipRect.height - 5; // отступ 5px сверху
+          top = rect.top - tooltipRect.height - 5;
           break;
         case 'bottom':
           left = rect.left + (rect.width - tooltipRect.width) / 2;
@@ -45,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function () {
           top = rect.top + (rect.height - tooltipRect.height) / 2;
           break;
         default:
-          // fallback на 'top'
           left = rect.left + (rect.width - tooltipRect.width) / 2;
           top = rect.top - tooltipRect.height - 5;
       }
